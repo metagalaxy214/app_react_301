@@ -1,0 +1,15 @@
+- content_for :title, "Reset Password"
+- content_for :body_id, "reset-password"
+
+section#reset-password-section
+  .reset-password
+    = form_tag reset_password_path, method: :post, id: "reset-form" do
+      input name="reset_token" type="hidden" value="#{params[:reset_token].to_s}"
+      - if flash[:error]
+        .error = flash[:error]
+      .field-row
+        .field.password
+          input name="password" type="password" required="required" placeholder="New password" value="" tabindex="1" autofocus="autofocus"
+      .field-row
+        .field.submit
+          input type="submit" value="reset" tabindex="2"

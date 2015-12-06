@@ -1,0 +1,26 @@
+
+section#vacation-hold
+  .container
+    form method="#" action="#"
+      h2.section-title Vacation Hold
+      p Going on vacation? We can suspend your delivery for two weeks.
+      p Deliveries will resume the first Monday after your return date.
+      .field-row
+        .field.one_week
+          label.radio
+            input type="radio" name="vacation_hold" value="one_week"
+            .input: span One week hold
+      .field-row
+        .field.two_week
+          label.radio
+            input type="radio" name="vacation_hold" value="two_week"
+            .input: span Two week hold
+      .field-row
+        .field.submit: input type="submit" value="Submit"
+    form method="#" action="#"
+      p If your plans change, you can cancel your Hold.
+      p Deliveries will resume the first Monday after cancellation.
+      .field-row
+        .field.cancel
+          input type="hidden" name="cancel_vacation_hold" value="1"
+          input type="submit" value="Cancel Vacation Hold"
