@@ -1,0 +1,17 @@
+- content_for :title, "Forgot Password"
+- content_for :body_id, "forgot-password"
+
+section#forgot-password-section
+  .forgot-password
+    = form_tag forgot_password_path, method: :post, id: "forgot-form" do
+      - if flash[:error]
+        .error = flash[:error]
+      - if flash[:success]
+        .success = flash[:success]
+      .field-row
+        .field.email
+          .helper-link &nbsp;
+          input name="email" type="email" required="required" placeholder="Your Email" value="#{@login_presenter.email}" tabindex="1" autofocus="autofocus"
+      .field-row
+        .field.submit
+          input type="submit" value="reset" tabindex="2"
