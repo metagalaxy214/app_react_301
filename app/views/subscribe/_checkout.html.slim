@@ -1,0 +1,51 @@
+section#checkout
+  .container
+    form action="#" method="#"
+      h2.section-title Checkout
+      .field-row
+        .name-on-card Name on Card
+        .required: span Required fields <span class="asterisk">*</span>
+      .field-row
+        .field.card_first_name:          input type="text" name="card_first_name" required="required" placeholder="First"
+        .field.card_last_name:           input type="text" name="card_last_name" required="required" placeholder="Last"
+      .field-row
+        .field.card_number:              input type="text" name="card_number" required="required" placeholder="Card Number" maxlength="20"
+        .field.card_cvv:                 input type="text" name="card_cvv" required="required" placeholder="cvv" maxlength="4"
+        .field.card_exp_month:           input type="text" name="card_exp_month" required="required" placeholder="Exp. Month" maxlength="2"
+        .field.card_exp_year:            input type="text" name="card_exp_year" required="required" placeholder="Exp. Year" maxlength="4"
+      .field-row
+        .field.promo
+          input type="text" name="promo" placeholder="Promo Code"
+          = link_to "Apply", "#promoapply", class: "apply-promo"
+        .field.email:                    input type="email" name="email" required="required" placeholder="Email Address"
+
+
+      h2.section-title &nbsp;
+      .field-row
+        - if current_page?(gift_path)
+          .billing-address
+            | Billing Address
+        - else
+          .billing-address
+            | Billing Address
+            label.checkbox.after
+              input type="checkbox"
+              .input: span Same as Shipping
+
+      .field-row
+        .field.billing_first_name:       input type="text" name="billing_first_name" required="required" placeholder="First"
+        .field.billing_last_name:        input type="text" name="billing_last_name" required="required" placeholder="Last"
+      .field-row
+        .field.billing_address_1:        input type="text" name="billing_address_1" required="required" placeholder="Address 1"
+        .field.billing_address_2:        input type="text" name="billing_address_2" placeholder="Address 2"
+      .field-row
+        .field.billing_city:             input type="text" name="billing_city" required="required" placeholder="City"
+        .field.billing_state:            select name="billing_state" required="required" placeholder="State"
+          option selected="selected"
+          - @p.states.each do |state|
+            option value="#{state[1]}" = state[1]
+
+        .field.billing_zip:              input type="text" name="billing_zip_code" required="required" placeholder="Zip Code" maxlength="5"
+      .field-row
+        .field.billing_phone:            input type="tel" name="billing_phone" required="required" placeholder="Phone"
+        .field.submit:                   input type="submit" value="Next"
