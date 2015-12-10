@@ -1,0 +1,20 @@
+section#thank-you
+  .container
+    .thank-you-text
+      .thank-you Thank you!
+      .refer-a-friend Refer a friend and get $10
+      .credit Get $10 credit for every new friend you introduce to us.
+    .social
+      .addthis_toolbox.addthis_default_style.addthis_32x32_style[addthis:title="TODO add text for sharing with referral code #23O8SWND"]
+        = link_to "#", class: "addthis_button_twitter share-button" do
+          = image_tag "ico.share-twitter.png"
+        = link_to "#", class: "addthis_button_facebook share-button" do
+          = image_tag "ico.share-facebook.png"
+        = link_to "#", class: "email-button share-button" do
+          = image_tag "ico.share-email.png"
+      form action="#"
+        input type="email" placeholder="Enter email address" name="email" required="required"
+        input type="submit" value="Send Email"
+    .referral
+      span Or copy & paste your Personal Code
+      input name="referral_code" type="text" readonly="readonly" value="2093HFWEFLS"

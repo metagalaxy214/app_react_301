@@ -1,0 +1,39 @@
+section#confirm
+  .container
+    .order-summary
+      h2.section-title Confirm Your Order
+      - if current_page?(home_delivery_path)
+        .subscription
+          .description Chef-Crafted Menus Delivered to You for $70 a Week
+          .user Anna Smith<br/>222 Main Street<br/>San Francisco, CA 93229
+
+      - if current_page?(gift_path)
+        .subscription
+          .description 1 Week of Seasonally Inspired Meals for $70
+          .user Anna Smith<br/>222 Main Street<br/>San Francisco, CA 93229
+          = link_to "Edit My Order >", "#edit-my-order", class: "edit-order"
+          = link_to "Delete Order >", "#delete-order", class: "delete-order"
+        .subscription
+          .description 1 Week of Seasonally Inspired Meals for $70
+          .user Anna Smith<br/>222 Main Street<br/>San Francisco, CA 93229
+          = link_to "Edit My Order >", "#edit-my-order", class: "edit-order"
+          = link_to "Delete Order >", "#delete-order", class: "delete-order"
+        .subscription
+          .description 1 Week of Seasonally Inspired Meals for $70
+          .user Anna Smith<br/>222 Main Street<br/>San Francisco, CA 93229
+          = link_to "Edit My Order >", "#edit-my-order", class: "edit-order"
+          = link_to "Delete Order >", "#delete-order", class: "delete-order"
+        .subscription
+          .description 1 Week of Seasonally Inspired Meals for $70
+          .user Anna Smith<br/>222 Main Street<br/>San Francisco, CA 93229
+          = link_to "Edit My Order >", "#edit-my-order", class: "edit-order"
+          = link_to "Delete Order >", "#delete-order", class: "delete-order"
+        .subscription
+          .description 1 Week of Seasonally Inspired Meals for $70
+          .user Anna Smith<br/>222 Main Street<br/>San Francisco, CA 93229
+          = link_to "Edit My Order >", "#edit-my-order", class: "edit-order"
+          = link_to "Delete Order >", "#delete-order", class: "delete-order"
+    .complete-order
+      - if current_page?(gift_path)
+        .total Total: $798.00
+      = link_to "Complete Order", "#complete-order", class: "complete-order-link"

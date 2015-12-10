@@ -1,0 +1,22 @@
+section#choose-gift
+  .container
+    h3.title Choose A Gift
+    form#gift-selector
+      .gift-container
+        - @p.gifts.each do |gift|
+          - gift_id = "#{gift.weeks}_week#{'s' if gift.weeks > 1}"
+          input.gift-input type="radio" name="gift" value="#{gift_id}" id="#{gift_id}"
+          label.gift for="#{gift_id}"
+            .gift-name = gift.name
+            .gift-image = image_tag(gift.image.url)
+            .gift-price = number_to_currency gift.amount
+            .gift-description
+              p: strong = gift.title
+              p = gift.description
+
+      .field.submit: input type="submit" value="Next"
+
+    / limited supply div - show with javascript
+    .limited-supply
+      h2 Limited Supply
+      p Aliquam sed arcu non magna tincidunt feugiat. Cras vel ultrices neque. Mauris rutrum quam suscipit, interdum lacus non, venenatis ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mi tellus, commodo non pellentesque ac, ornare vel nisi.

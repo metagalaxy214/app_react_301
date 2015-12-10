@@ -1,0 +1,18 @@
+section#register
+  .container
+    form action="#" method="#"
+      h2.section-title Register
+      .field-row
+        .member Register to change your address, contact information, and hold deliveries while you are on vacation.
+        .required: span Required fields <span class="asterisk">*</span>
+      .field-row
+        .field.first_name:          input type="text" name="first_name" required="required" placeholder="First"
+        .field.last_name:           input type="text" name="last_name" required="required" placeholder="Last"
+      .field-row
+        .field.email:               input type="email" name="email" required="required" placeholder="Email Address"
+        .field.confirm_email:       input type="email" name="confirm_email" required="required" placeholder="Confirm Email"
+      .field-row
+        .field.password:            input type="password" name="password" required="required" placeholder="Password"
+      .field-row
+        = link_to "Register through Facebook", "#facebook-signup", class: "facebook-register"
+        .field.submit:              input type="submit" value="Next"

@@ -1,0 +1,23 @@
+- content_for :title, "Gift"
+- content_for :body_id, "gift"
+
+/ React Component Layout
+
+/ - GiftPage
+/   - HowItWorks
+/   - ChooseGiftBox
+/     - GiftOption
+/   - GiftDeliveryInfo
+/   - GiftCheckoutInfo
+/
+/   - GiftAddAnother
+/   - GiftConfirm
+/ - ThankYou
+
+= render 'gift_how_it_works'
+= render 'gift_choose'
+= render 'gift_delivery'
+= render 'checkout'
+= render 'gift_add_another'
+= render 'confirm_order'
+= render 'thank_you'
