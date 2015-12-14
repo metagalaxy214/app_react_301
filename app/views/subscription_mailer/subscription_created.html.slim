@@ -1,0 +1,34 @@
+p Dear #{@s.user.first_name},
+
+p Thank you for subscribing to Tablerunner.com.
+p Below you can find information about the subscription.
+
+p
+  strong Profile Information
+
+p
+  | Name: #{@s.user.first_name} #{@s.user.last_name}
+  br
+  | Email: #{@s.email}
+  br
+  | Phone: #{@s.user.phone_number}
+
+p
+  strong Recipient Information
+
+p
+  | Name: #{@s.recipient_first_name} #{@s.recipient_last_name}
+  br
+  | Email: #{@s.recipient_email}
+  br
+  | Phone: #{@s.recipient_phone}
+
+p
+  strong Delivery Information
+
+p
+  | Address:
+  br
+  | #{@s.shipping_address_line1} #{@s.shipping_address_line2}
+  br
+  | #{@s.shipping_city}, #{@s.shipping_state} #{@s.shipping_zipcode}
