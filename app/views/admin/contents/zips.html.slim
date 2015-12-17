@@ -1,0 +1,15 @@
+
+- content_for :title, "Edit Zip Codes"
+- content_for :body_id, "admin"
+section#page-title
+  .container
+    .title: h1 Edit Available Zip Codes
+section#contents
+  .container
+    = render "admin/flashes"
+    = form_tag admin_content_path(@content.id), method: :patch, multipart: true
+      p Add all zip codes that you service, each on its own line. They will automatically sort numerically once you save.
+      .field-row
+        .field: textarea name="content[body]" required="required" placeholder="Zip Codes" rows="100" = @content.body.html_safe
+        .field.submit:                  input type="submit" value="Update"
+

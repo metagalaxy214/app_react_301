@@ -1,0 +1,11 @@
+
+- if flash[:success]
+  .flash.flash-success
+    span.close X
+    h6 Success!
+    p= flash[:success].to_s
+- elsif flash[:error]
+  .flash.flash-error
+    span.close X
+    h6 We're Sorry!
+    p= flash[:error].to_s

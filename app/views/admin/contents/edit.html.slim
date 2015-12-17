@@ -1,0 +1,14 @@
+
+- content_for :title, "Edit content area"
+- content_for :body_id, "admin"
+section#page-title
+  .container
+    .title: h1 Edit content: #{@content.key}
+section#contents
+  .container
+    = render "admin/flashes"
+    = form_tag admin_content_path(@content.id), method: :patch, multipart: true
+      .field-row
+        .field: textarea name="content[body]" required="required" placeholder="Contents" = @content.body.html_safe
+        .field.submit:                  input type="submit" value="Update"
+

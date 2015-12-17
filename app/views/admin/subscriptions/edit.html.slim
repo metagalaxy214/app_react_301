@@ -1,0 +1,28 @@
+
+- content_for :title, "Edit subscription"
+- content_for :body_id, "admin"
+section#page-title
+  .container
+    .title: h1 Edit subscription for #{@subscription.display_name}
+section#subscriptions
+  .container
+    = render "admin/flashes"
+    = form_tag admin_subscription_path(@subscription.id), method: :patch
+      h2.section-title Delivery
+      .field-row
+        .field.first_name:              input type="text" name="subscription[recipient_first_name]" required="required" placeholder="First" value="#{@subscription.recipient_first_name}"
+        .field.last_name:               input type="text" name="subscription[recipient_last_name]" required="required" placeholder="Last" value="#{@subscription.recipient_last_name}"
+      .field-row
+        .field.email:                   input type="email" name="subscription[email]" required="required" placeholder="Email" value="#{@subscription.recipient_email}"
+        .field.recipient_phone:            input type="tel" name="subscription[recipient_phone]" required="required" placeholder="Phone Number" maxlength="20" value="#{@subscription.recipient_phone}"
+      .field-row
+        .field: input type="text" name="subscription[shipping_address_line1]" required="required" placeholder="Shipping Address" value="#{@subscription.shipping_address_line1}"
+        .field: input type="text" name="subscription[shipping_address_line2]"                     placeholder="Line 2" value="#{@subscription.shipping_address_line2}"
+      .field-row
+        .field: input type="text" name="subscription[shipping_city]" required="required" placeholder="City" value="#{@subscription.shipping_city}"
+        .field: input type="text" name="subscription[shipping_state]" required="required" placeholder="State" value="#{@subscription.shipping_state}"
+      .field-row
+        .field: input type="text" name="subscription[shipping_zipcode]" required="required" placeholder="Zip" value="#{@subscription.shipping_zipcode}"
+        .field.submit:                  input type="submit" value="Update"
+
+      p= @subscription.shipping_special_instructions.to_s

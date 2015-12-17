@@ -1,0 +1,18 @@
+
+- content_for :title, "Edit menu"
+- content_for :body_id, "admin"
+section#page-title
+  .container
+    .title: h1 Edit menu for #{@menu.title}
+section#menus
+  .container
+    = render "admin/flashes"
+    = form_tag admin_menu_path(@menu.id), method: :patch, multipart: true
+      = image_tag @menu.plate_image_url if @menu.plate_image_url
+      .field-row
+        .field: input type="file" name="menu[plate_image]"
+        .field:              input type="text" name="menu[title]" required="required" placeholder="First" value="#{@menu.title}"
+      .field-row
+        .field:               input type="text" name="menu[description]" required="required" placeholder="Last" value="#{@menu.description}"
+        .field.submit:                  input type="submit" value="Update"
+

@@ -1,0 +1,22 @@
+
+- content_for :title, "Edit gift"
+- content_for :body_id, "admin"
+section#page-title
+  .container
+    .title: h1 Edit gift for #{@gift.display_name}
+section#gifts
+  .container
+    = render "admin/flashes"
+    = form_tag admin_gift_path(@gift.id), method: :patch, multipart: true
+      h2.section-title Gift
+      = image_tag @gift.image_url if @gift.image_url
+      p To edit the price for this plan, go to your Stripe.com panel.
+      .field-row
+        .field: input type="file" name="gift[image]"
+        .field: input type="text" name="gift[title]" required="required" placeholder="Title" value="#{@gift.title}"
+      .field-row
+        .field: input type="text" name="gift[amount]" required="required" value="#{number_to_currency(@gift.amount.to_f / 100)}"
+        .field: input type="text" name="gift[description]" required="required" placeholder="Title" value="#{@gift.description}"
+      .field-row
+        .field: input type="number" name="gift[weeks]" required="required" placeholder="Weeks" value="#{@gift.weeks}"
+        .field.submit:                  input type="submit" value="Update"

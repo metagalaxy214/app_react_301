@@ -1,0 +1,16 @@
+- content_for :title, "Edit user"
+- content_for :body_id, "admin"
+section#page-title
+  .container
+    .title: h1 Edit User #{@user.display_name}
+section#users
+  .container
+    = render "admin/flashes"
+    = form_tag admin_user_path(@user.id), method: :patch
+      h2.section-title Profile
+      .field-row
+        .field.first_name:              input type="text" name="user[first_name]" required="required" placeholder="First" value="#{@user.first_name}"
+        .field.last_name:               input type="text" name="user[last_name]" required="required" placeholder="Last" value="#{@user.last_name}"
+      .field-row
+        .field.phone_number:            input type="tel" name="user[phone_number]" required="required" placeholder="Phone Number" maxlength="20" value="#{@user.phone_number}"
+        .field.submit:                  input type="submit" value="Update"

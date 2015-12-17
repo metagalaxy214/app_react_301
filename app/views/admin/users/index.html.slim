@@ -1,0 +1,12 @@
+- content_for :title, "Manage users"
+- content_for :body_id, "admin"
+section#page-title
+  .container
+    .title: h1 Manage Users
+section#users
+  .container
+    ul
+      - @users.each do |u|
+        li= link_to u.display_name, edit_admin_user_path(u.id)
+    = will_paginate(@users)
+

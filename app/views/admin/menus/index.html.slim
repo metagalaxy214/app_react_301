@@ -1,0 +1,11 @@
+
+- content_for :title, "Manage Chef's Menu"
+- content_for :body_id, "admin"
+section#page-title
+  .container
+    .title: h1 Manage Chef's Menu
+section#users
+  .container
+    ul
+      - @menus.each do |menu|
+        li= link_to menu.title, edit_admin_menu_path(menu.id)

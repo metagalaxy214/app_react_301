@@ -1,0 +1,11 @@
+
+- content_for :title, "Manage Content Areas"
+- content_for :body_id, "admin"
+section#page-title
+  .container
+    .title: h1 Manage Content Areas
+section#users
+  .container
+    ul
+      - @contents.each do |content|
+        li= link_to content.key, edit_admin_content_path(content.id)

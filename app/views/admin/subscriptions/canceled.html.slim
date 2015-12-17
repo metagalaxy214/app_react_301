@@ -1,0 +1,14 @@
+
+- content_for :title, "Canceled Subscriptions"
+- content_for :body_id, "admin"
+section#page-title
+  .container
+    .title: h1 Manage Canceled Subscriptions
+    p
+      = link_to "View active accounts", admin_subscriptions_path
+section#users
+  .container
+    ul
+      - @subscriptions.each do |subscription|
+        li= link_to subscription.display_name, edit_admin_subscription_path(subscription.id)
+    = will_paginate(@subscriptions)

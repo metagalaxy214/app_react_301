@@ -1,0 +1,11 @@
+
+- content_for :title, "Manage Gifts"
+- content_for :body_id, "admin"
+section#page-title
+  .container
+    .title: h1 Manage Active Gifts
+section#users
+  .container
+    ul
+      - @gifts.each do |gift|
+        li= link_to gift.display_name, edit_admin_gift_path(gift.id)
