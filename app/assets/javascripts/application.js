@@ -2,7 +2,7 @@
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
+// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
 //
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file.
@@ -11,6 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require_directory ./vendor/react
+//= require_directory ./vendor/chosen
+//= require_directory ./vendor/slick
+//= require_directory ./vendor/jquery-ui
+//= require_directory ./components
+//= require ./utilities
+//= require ./tracking
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
