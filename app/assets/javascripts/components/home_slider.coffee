@@ -20,11 +20,11 @@ HomeSlider = React.createClass
     resource_url = "/availability/#{zip}.json"
     @getServerResponse resource_url, (availability) ->
       if availability.available == "false"
-        window.location = "http://testing.tablerunner.com:9000/static_pages/unavailable"
+        window.location = "http://testing.tablerun.com:9000/static_pages/unavailable"
       else if availability.available == "true" and availability.allowed == "false"
-        window.location = "http://testing.tablerunner.com:9000/static_pages/booked"
+        window.location = "http://testing.tablerun.com:9000/static_pages/booked"
       else 
-        window.location = "http://testing.tablerunner.com:9000/subscribe/home-delivery"
+        window.location = "http://testing.tablerun.com:9000/subscribe/home-delivery"
         #sign up 
   handleCloseUnavailableDialog: ->
     new_state = @state

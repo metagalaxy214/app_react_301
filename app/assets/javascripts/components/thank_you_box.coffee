@@ -17,7 +17,7 @@ ThankYouBox = React.createClass
     e.preventDefault()
 
     fb = jQuery(@refs.facebook.getDOMNode())
-    text = "https://members.tablerunner.com/?referral_code=#{@props.referral_code}"
+    text = "https://members.tablerun.com/?referral_code=#{@props.referral_code}"
 
     @openShareLink "http://www.facebook.com/sharer/sharer.php?u=#{text}"
 
@@ -25,7 +25,7 @@ ThankYouBox = React.createClass
     e.preventDefault()
 
     tw = jQuery(@refs.twitter.getDOMNode())
-    text = "https://members.tablerunner.com/?referral_code=#{@props.referral_code}"
+    text = "https://members.tablerun.com/?referral_code=#{@props.referral_code}"
 
     @openShareLink "https://twitter.com/intent/tweet?url=#{text}"
 
